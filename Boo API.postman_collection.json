@@ -1,0 +1,183 @@
+{
+	"info": {
+		"_postman_id": "3e80e94f-5558-43eb-af9d-1674cf5e2fc2",
+		"name": "Boo API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "4760427"
+	},
+	"item": [
+		{
+			"name": "Profile",
+			"item": [
+				{
+					"name": "Create Profile",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Ronald\",\n    \"description\": \"Ronald Profile\",\n    \"mbti\": \"INTJ\",\n    \"enneagram\": \"5w6\",\n    \"variant\": \"sp/sx\",\n    \"tritype\": 531,\n    \"socionics\": \"LII\",\n    \"sloan\": \"ROEAN\",\n    \"psyche\": \"INTJ\",\n    \"image\": \"https://example.com/john_doe_image.jpg\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/profile",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"profile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Profile by Profile ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/profile/659d72f3b1d78c424a9f990c",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"profile",
+								"659d72f3b1d78c424a9f990c"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Create User Account",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"ronaldjosuasda\",\n    \"email\": \"ronaldjosssuah@gmail.com\",\n    \"name\": \"Ronald Test\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/user",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Comment",
+			"item": [
+				{
+					"name": "Get Comment By Profile ID",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/comment/659d724dea122faa7a1f32ff?sortBy=totalLikes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"comment",
+								"659d724dea122faa7a1f32ff"
+							],
+							"query": [
+								{
+									"key": "sortBy",
+									"value": "totalLikes",
+									"description": "totalLikes, createdAt"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Post Comment",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"userId\": \"659f27c9680e1159d520137a\",\n    \"profileId\": \"659d724dea122faa7a1f32ff\",\n    \"title\" : \"Test Comment\",\n    \"text\": \"This is a comment\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/comment",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"comment"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Like Comment",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/comment/like/659f2813680e1159d520137e/659d81031d18affa14facbb0",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"comment",
+								"like",
+								"659f2813680e1159d520137e",
+								"659d81031d18affa14facbb0"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
